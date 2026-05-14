@@ -1,5 +1,5 @@
 ---
 permalink: /cal/
-redirect_to: https://tidycal.com/felix.sargent
+redirect_to: https://calendar.felixsargent.com
 sitemap: false
 ---

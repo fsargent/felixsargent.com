@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "felixsargent-com",
+  "compatibility_date": "2026-05-14",
+  "assets": {
+    "directory": "./_site"
+  },
+  "routes": [
+    {
+      "pattern": "felixsargent.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.felixsargent.com",
+      "custom_domain": true
+    }
+  ]
+}

@@ -217,6 +217,21 @@ blockquote p:not(:last-child) {
   margin: 0;
 }
 
+.post-format {
+  display: inline-block;
+  font-size: 0.65em;
+  font-weight: 600;
+  color: #fff;
+  background-color: #c0392b;
+  border-radius: 3px;
+  padding: 2px 6px;
+  margin-left: 6px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
 .tooltip {
   border-bottom: 1px dotted #333;
   cursor: help;

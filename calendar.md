@@ -1,5 +1,5 @@
 ---
 layout: null
 permalink: /calendar/
-redirect_to: https://tidycal.com/felix.sargent
+redirect_to: https://calendar.felixsargent.com
 ---

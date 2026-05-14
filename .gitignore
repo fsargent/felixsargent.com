@@ -5,6 +5,7 @@ _site/
 .jekyll-metadata
 .bundle/
 vendor/
+.wrangler/
 
 # Existing rules
 *.DS_Store
