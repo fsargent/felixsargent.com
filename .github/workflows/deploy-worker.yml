@@ -27,6 +27,11 @@ jobs:
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
