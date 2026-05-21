@@ -232,11 +232,6 @@ blockquote p:not(:last-child) {
   line-height: 1.4;
 }
 
-.tooltip {
-  border-bottom: 1px dotted #333;
-  cursor: help;
-}
-
 #print-button {
   display: block;
   width: -moz-fit-content;
