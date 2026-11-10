@@ -1,0 +1,118 @@
+{
+ "actual": {
+  "seats": {
+   "labour": 409,
+   "conservative": 121,
+   "reform-uk": 5,
+   "liberal-democrats": 72,
+   "others": 8,
+   "green": 4,
+   "scottish-national-party": 9,
+   "plaid-cymru": 4
+  },
+  "gallagher_vs_votes": 24.200477610270035,
+  "vote_share": {
+   "green": 6.903838492305452,
+   "reform-uk": 14.66269861102583,
+   "labour": 34.64484200365271,
+   "liberal-democrats": 12.563133566851969,
+   "others": 3.573449131159316,
+   "conservative": 24.370784848229547,
+   "scottish-national-party": 2.587405272875521,
+   "plaid-cymru": 0.6938480738996518
+  },
+  "gallagher_vs_sincere": 31.058759782102825
+ },
+ "scenarios": {
+  "Bullet: favourite only": {
+   "seats": {
+    "labour": 356,
+    "conservative": 191,
+    "reform-uk": 17,
+    "liberal-democrats": 47,
+    "green": 8,
+    "others": 1,
+    "scottish-national-party": 9,
+    "plaid-cymru": 3
+   },
+   "gallagher": 26.042543736280845
+  },
+  "Approve if rated 8+": {
+   "seats": {
+    "labour": 362,
+    "conservative": 180,
+    "reform-uk": 14,
+    "liberal-democrats": 52,
+    "green": 10,
+    "others": 1,
+    "scottish-national-party": 9,
+    "plaid-cymru": 4
+   },
+   "gallagher": 26.340574542574377
+  },
+  "Approve if rated 7+": {
+   "seats": {
+    "labour": 383,
+    "conservative": 148,
+    "reform-uk": 9,
+    "liberal-democrats": 66,
+    "green": 12,
+    "others": 1,
+    "scottish-national-party": 9,
+    "plaid-cymru": 4
+   },
+   "gallagher": 28.00469840451716
+  },
+  "Approve if rated 6+": {
+   "seats": {
+    "labour": 417,
+    "conservative": 113,
+    "reform-uk": 6,
+    "liberal-democrats": 74,
+    "green": 11,
+    "others": 1,
+    "scottish-national-party": 6,
+    "plaid-cymru": 4
+   },
+   "gallagher": 31.593240234987654
+  },
+  "Within 2 points of own top": {
+   "seats": {
+    "labour": 443,
+    "conservative": 68,
+    "reform-uk": 7,
+    "green": 22,
+    "liberal-democrats": 84,
+    "others": 1,
+    "scottish-national-party": 3,
+    "plaid-cymru": 4
+   },
+   "gallagher": 34.64765554060535
+  }
+ },
+ "proportional": {
+  "seats": {
+   "green": 104,
+   "labour": 175,
+   "liberal-democrats": 78,
+   "conservative": 145,
+   "reform-uk": 112,
+   "others": 1,
+   "scottish-national-party": 13,
+   "plaid-cymru": 4
+  },
+  "gallagher": 0.10547237436288161
+ },
+ "sincere_share": {
+  "green": 16.374621625688405,
+  "labour": 27.632076971497355,
+  "liberal-democrats": 12.330300517122634,
+  "conservative": 22.994819634072407,
+  "reform-uk": 17.787929534033825,
+  "others": 0.1446856509134799,
+  "scottish-national-party": 2.123880607204177,
+  "plaid-cymru": 0.6116854594677249
+ },
+ "gb_seats": 632,
+ "respondents": 26655
+}
