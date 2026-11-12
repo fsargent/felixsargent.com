@@ -77,20 +77,30 @@ Approval voting makes each constituency pick its most acceptable party. In 2024,
 
 <div class="table-scroll" markdown="1">
 
-| Scenario | Median MP | Gap to median voter | Spread of MPs | Mirror distance | Like-score for Parliament |
-|---|---|---|---|---|---|
-| Voters | 5.0 | | 2.2 | | |
-| First Past the Post (2024 result) | 3.2 | 1.8 | 1.8 | 1.3 | 4.0 |
-| Approval, favorite only | 3.2 | 1.8 | 2.1 | 1.1 | 3.9 |
-| Approval, rated 8 or more | 3.2 | 1.8 | 2.1 | 1.2 | 3.9 |
-| Approval, rated 7 or more | 3.2 | 1.8 | 1.9 | 1.2 | 4.0 |
-| Approval, rated 6 or more | 3.2 | 1.8 | 1.7 | 1.4 | 4.1 |
-| Approval, within 2 of favorite | 3.2 | 1.8 | 1.5 | 1.6 | 4.2 |
-| Proportional allocation | 4.1 | 0.9 | 2.4 | 1.1 | 3.7 |
+| Scenario | Median MP | Gap to median voter | Average MP | Spread of MPs | Mirror distance | Like-score for Parliament |
+|---|---|---|---|---|---|---|
+| Voters | 5.0 | | 4.8 | 2.2 | | |
+| First Past the Post (2024 result) | 3.2 | 1.8 | 4.2 | 1.8 | 1.3 | 4.0 |
+| Approval, favorite only | 3.2 | 1.8 | 4.7 | 2.1 | 1.1 | 3.9 |
+| Approval, rated 8 or more | 3.2 | 1.8 | 4.6 | 2.1 | 1.2 | 3.9 |
+| Approval, rated 7 or more | 3.2 | 1.8 | 4.4 | 1.9 | 1.2 | 4.0 |
+| Approval, rated 6 or more | 3.2 | 1.8 | 4.1 | 1.7 | 1.4 | 4.1 |
+| Approval, within 2 of favorite | 3.2 | 1.8 | 3.8 | 1.5 | 1.6 | 4.2 |
+| Proportional allocation | 4.1 | 0.9 | 5.2 | 2.4 | 1.1 | 3.7 |
 
 </div>
 
 The spread is the standard deviation of positions on the scale. Proportional allocation spreads MPs by 2.4, against 2.2 for voters. Generous approval squeezes MPs to 1.5, around Labour. The mirror distance agrees. Proportional allocation scores 1.1, and approval voting scores between 1.1 and 1.6.
+
+## The average MP depends on how voters approve
+
+Clay Shentrup argues in [The Proportional Representation Fallacy](https://clayshentrup.medium.com/the-proportional-representation-fallacy-553846a383b3) that policy follows the ideological average of the whole legislature, not party labels. A centrist legislature and a proportional one can share the same average.
+
+On the average, the result depends on the cut-off. The average voter sits at 4.8. Narrow approval puts the average MP at 4.6 to 4.7, nearer than proportional allocation at 5.2. Approval at 7 or more ties with proportional allocation, at a gap of 0.4. Generous approval moves the average MP to 3.8, the furthest of any scenario.
+
+Proportional allocation overshoots to the right because Reform UK and the Conservatives hold 257 seats between them. Narrow approval lands near the average voter because a large Labour majority and a large Conservative opposition offset each other.
+
+The average and the median measure different things. If MPs vote as individuals, the average MP describes the chamber. Under a single-party majority, the majority's MPs carry each vote, and the median MP decides the outcome. Westminster MPs usually vote with their party, so the median describes Westminster better.
 
 ## Approval voting wins on dislike
 
@@ -126,7 +136,7 @@ Proportional representation does not need a complicated ballot. [Proportional Ap
 The code and its output:
 
 1. [approval_estimate.py](/components/data/posts/2026-11-10-approval-voting-proportionality/approval_estimate.py) builds the approval ballots and counts the seats. Its output is [results.json](/components/data/posts/2026-11-10-approval-voting-proportionality/results.json).
-2. [congruence.py](/components/data/posts/2026-11-10-approval-voting-proportionality/congruence.py) measures the median MP, the spread, the mirror distance, and the like-scores. Its output is [congruence.json](/components/data/posts/2026-11-10-approval-voting-proportionality/congruence.json).
+2. [congruence.py](/components/data/posts/2026-11-10-approval-voting-proportionality/congruence.py) measures the median MP, the average MP, the spread, the mirror distance, and the like-scores. Its output is [congruence.json](/components/data/posts/2026-11-10-approval-voting-proportionality/congruence.json).
 3. [charts.py](/components/data/posts/2026-11-10-approval-voting-proportionality/charts.py) draws the two charts.
 
 The code needs three inputs:

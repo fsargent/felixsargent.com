@@ -9,6 +9,7 @@
   "plaid-cymru": 3.242984257357974
  },
  "voter_median": 5,
+ "voter_mean": 4.793789187821827,
  "voter_sd": 2.242890961383175,
  "scenarios": {
   "2024 actual (First Past the Post)": {
@@ -23,6 +24,8 @@
     "scottish-national-party": 9,
     "plaid-cymru": 4
    },
+   "mean_mp": 4.1810821218827146,
+   "mean_gap": 0.6127070659391123,
    "median_mp": 3.172099087353325,
    "sd_mp": 1.778578961702148,
    "median_gap": 1.8279009126466752,
@@ -42,6 +45,8 @@
     "scottish-national-party": 9,
     "plaid-cymru": 3
    },
+   "mean_mp": 4.729626496008004,
+   "mean_gap": 0.06416269181382273,
    "median_mp": 3.172099087353325,
    "sd_mp": 2.107676620585578,
    "median_gap": 1.8279009126466752,
@@ -61,6 +66,8 @@
     "scottish-national-party": 9,
     "plaid-cymru": 4
    },
+   "mean_mp": 4.631931055225308,
+   "mean_gap": 0.16185813259651916,
    "median_mp": 3.172099087353325,
    "sd_mp": 2.0634609126529035,
    "median_gap": 1.8279009126466752,
@@ -80,6 +87,8 @@
     "scottish-national-party": 9,
     "plaid-cymru": 4
    },
+   "mean_mp": 4.381197357890117,
+   "mean_gap": 0.41259182993170995,
    "median_mp": 3.172099087353325,
    "sd_mp": 1.9246992442021964,
    "median_gap": 1.8279009126466752,
@@ -99,6 +108,8 @@
     "scottish-national-party": 6,
     "plaid-cymru": 4
    },
+   "mean_mp": 4.11964959135536,
+   "mean_gap": 0.6741395964664667,
    "median_mp": 3.172099087353325,
    "sd_mp": 1.74243071580643,
    "median_gap": 1.8279009126466752,
@@ -118,6 +129,8 @@
     "scottish-national-party": 3,
     "plaid-cymru": 4
    },
+   "mean_mp": 3.8165010827158303,
+   "mean_gap": 0.9772881051059965,
    "median_mp": 3.172099087353325,
    "sd_mp": 1.470721925658209,
    "median_gap": 1.8279009126466752,
@@ -136,6 +149,8 @@
     "scottish-national-party": 13,
     "plaid-cymru": 4
    },
+   "mean_mp": 5.204832997795993,
+   "mean_gap": 0.41104380997416623,
    "median_mp": 4.057141680056029,
    "sd_mp": 2.4083257824552793,
    "median_gap": 0.9428583199439711,

@@ -121,6 +121,7 @@ def main(bes_path, results_path, hexes_path, out_path):
         return math.sqrt(sum(w * (x - m) ** 2 for x, w in points) / t)
 
     voter_points = [(i, h) for i, h in enumerate(voter_hist)]
+    voter_mean = sum(i * h for i, h in voter_points) / sum(h for _, h in voter_points)
     voter_cdf = cdf_from_hist(voter_hist)
 
     def chamber_stats(seat_counts):
@@ -137,7 +138,9 @@ def main(bes_path, results_path, hexes_path, out_path):
                 c = cell(region_of[s['id']], voted)
                 chamber_like += n * sum(seat_counts.get(p, 0) / t * mean_like(c, p) for p in position)
                 votes_total += n
+        mean_mp = sum(x * n for x, n in mp_points) / t
         return {
+            'mean_mp': mean_mp, 'mean_gap': abs(mean_mp - voter_mean),
             'median_mp': weighted_median(mp_points), 'sd_mp': sd(mp_points),
             'median_gap': abs(weighted_median(mp_points) - weighted_median(voter_points)),
             'wasserstein': wasserstein, 'chamber_like': chamber_like / votes_total,
@@ -188,7 +191,7 @@ def main(bes_path, results_path, hexes_path, out_path):
             out[w] += 1
         return dict(out)
 
-    results = {'party_position': position, 'voter_median': weighted_median(voter_points), 'voter_sd': sd(voter_points), 'scenarios': {}}
+    results = {'party_position': position, 'voter_median': weighted_median(voter_points), 'voter_mean': voter_mean, 'voter_sd': sd(voter_points), 'scenarios': {}}
 
     actual = [max(s['partyVotes'], key=s['partyVotes'].get) for s in gb]
     scenarios = [('2024 actual (First Past the Post)', actual)]
@@ -220,13 +223,13 @@ def main(bes_path, results_path, hexes_path, out_path):
 
     json.dump(results, open(out_path, 'w'), indent=1)
     print('party positions', {k: round(v, 2) for k, v in position.items()})
-    print(f"voters: median {results['voter_median']}, sd {results['voter_sd']:.2f}")
+    print(f"voters: median {results['voter_median']}, mean {results['voter_mean']:.2f}, sd {results['voter_sd']:.2f}")
     head = f"{'Scenario':40}{'localLike':>10}{'chamberLike':>12}{'medianMP':>9}{'gap':>6}{'sdMP':>6}{'EMD':>6}{'localDist':>10}"
     print(head)
     for name, r in results['scenarios'].items():
         local_like = r.get('local_like', r.get('best_party_like'))
         local_dist = r.get('local_distance', r.get('nearest_party_distance'))
-        print(f"{name:40}{local_like:10.2f}{r['chamber_like']:12.2f}{r['median_mp']:9.2f}{r['median_gap']:6.2f}{r['sd_mp']:6.2f}{r['wasserstein']:6.2f}{local_dist:10.2f}")
+        print(f"{name:40} mean {r['mean_mp']:5.2f} gap {r['mean_gap']:5.2f} {local_like:10.2f}{r['chamber_like']:12.2f}{r['median_mp']:9.2f}{r['median_gap']:6.2f}{r['sd_mp']:6.2f}{r['wasserstein']:6.2f}{local_dist:10.2f}")
 
 
 if __name__ == '__main__':
