@@ -1,118 +1,142 @@
 ---
 layout: default
-title: "Approval Voting Won't Make Westminster Proportional. Here's By How Much."
+title: "Proportional Representation Puts Parliament Nearer the Median Voter Than Approval Voting"
 date: 2026-11-10
 category: "Democracy"
-description: "Using 26,655 voters from the 2024 British Election Study, we estimate what single-member approval voting would do to Westminster. It ends vote splitting, but it leaves Parliament just as disproportional as First Past the Post."
-image: "/components/images/posts/2026-11-10-approval-voting-proportionality/gallagher.png"
+description: "British Election Study data from 2024 shows that single-member approval voting leaves Westminster as disproportional as First Past the Post, and further from the median voter than proportional representation."
+image: "/components/images/posts/2026-11-10-approval-voting-proportionality/median-mp.png"
 ---
 
-I've spent a long time arguing for approval voting, and the evidence keeps backing it up. In [St. Louis](/democracy/2025/08/29/st-louis-approval-voting.html), a third of voters used it to support more than one candidate, and it ended the vote splitting that handed the 2017 primary to a candidate most voters didn't want.
+On 2024 British Election Study data, proportional allocation puts the median MP 0.9 points from the median voter. The scale runs from 0 (left) to 10 (right). Single-member approval voting puts the median MP 1.8 points away, the same gap as First Past the Post. Approval voting wins a different test. The average voter likes its Parliament more.
 
-So here's a question I get a lot in the UK: if Westminster kept its 650 constituencies and just swapped the "Choose One" ballot for an approval ballot, would Parliament be fair?
+I have argued for approval voting for years. In [St. Louis](/democracy/2025/08/29/st-louis-approval-voting.html), a third of voters used it to back more than one candidate, and it ended vote splitting in the mayoral primary. Approval voting picks the candidate whom the most voters accept. Its supporters, me included, often say that the property makes for a centrist legislature. The British data lets us test the claim for Westminster.
 
-The short answer is no. Approval voting fixes the ballot. It doesn't fix the seat count. This post puts a number on how big that gap is, using real British voters' preferences rather than guesses.
+## The test
 
-## Why one winner per seat can't be proportional
+Suppose that Westminster keeps its 650 constituencies and swaps the single-mark ballot for an approval ballot. Each voter marks every candidate they accept, and the candidate with the most marks wins the seat. I compare the result with First Past the Post, and with proportional allocation of the same 632 seats in Great Britain.
 
-Under approval voting, you mark every candidate you're happy with, and the candidate with the most marks wins. That's a better way to pick *one* winner. It finds the candidate acceptable to the most people, instead of the one with the biggest bloc.
+I use three measures:
 
-But each constituency still elects one MP, and that MP takes 100% of the seat. Imagine 60% of voters in every constituency approve only Party A, and the other 40% approve only Party B. Party A wins all 650 seats. Nothing in the count shares seats out by support, so the distortions of winner-takes-all are still there. They just land on different parties.
+1. Proportionality, by the Gallagher index. For each party, subtract its seat share from its first-choice share. Square the gaps, add them, halve the sum, and take the square root. A score of 0 means that seats match first choices.
+2. Centrism, by the gap between the median MP and the median voter. A second measure, the mirror distance, gives the average distance that voters must move along the scale to match the spread of MPs.
+3. Satisfaction, by the like-score that the average voter gives the parties in Parliament.
 
-## Measuring "unfair": the Gallagher index
+Proportional systems score between 1 and 5 on the Gallagher index. The 2024 general election scored about 24, which the Electoral Reform Society [called the most disproportional in British history](https://www.politics.co.uk/news/2024/12/10/2024-general-election-was-historically-disproportional-and-volatile-new-report-says/). The previous record was 20.6, in 1983.
 
-The standard measure of how far seats stray from votes is the **Gallagher index**. For each party, take its share of votes minus its share of seats, in percentage points. Square each difference, add them up, halve the total, and take the square root.
+## The data
 
-> Gallagher index = √( ½ × Σ (vote share − seat share)² )
+The [British Election Study](https://www.britishelectionstudy.com/) surveyed 26,655 people in Great Britain after the 2024 election. Each person rated each party from 0 (strongly dislike) to 10 (strongly like), and placed themselves on the left-right scale. In the survey before the election, people also placed each party on the same scale.
 
-A score of 0 means seats exactly match votes. Proportional systems usually score between 1 and 5. The UK's 2024 general election scored about 24, which the Electoral Reform Society [called the most disproportional in British history](https://www.politics.co.uk/news/2024/12/10/2024-general-election-was-historically-disproportional-and-volatile-new-report-says/). The previous record was 20.6 in 1983.
+The 2024 votes cannot stand in for approval ballots. Millions of people voted tactically in 2024, against their favorite. Under approval voting, a voter who marks one candidate marks their favorite. So the model builds approval ballots from like-scores, not from votes. The model works in four steps:
 
-## Why you can't just re-count the 2024 votes
+1. A voter approves each party that they rate at or above a cut-off. Five cut-offs cover the range, from the favorite only to every party within 2 points of the favorite. A voter's first choice is the party that they rate highest.
+2. For each region and each 2024 vote, the model estimates the share of voters who approve each party.
+3. The model applies the shares to the 2024 vote count of each constituency. The most-approved party wins the seat.
+4. Proportional allocation shares all 632 seats by first choices, with the Sainte-Laguë divisor method.
 
-My first attempt at this took the 2024 results and layered approval assumptions on top. That's wrong, for two reasons.
+## Approval voting does not fix proportionality
 
-1. **People would vote differently.** In 2024, millions of people voted tactically for a candidate who could beat the one they disliked most, not for their favourite. Those votes were cast under "Choose One" incentives. They aren't approval ballots.
-2. **"Bullet voting" isn't First Past the Post.** Under approval, a voter who marks one candidate marks their *favourite*. Under First Past the Post, many people never vote for their favourite at all. So even the most minimal approval election wouldn't reproduce 2024.
+<figure class="post-chart">
+  <figcaption>Approval voting stays as disproportional as First Past the Post</figcaption>
+  <div id="chart-gallagher" class="chart-mount"><img src="/components/images/posts/2026-11-10-approval-voting-proportionality/gallagher.png" alt="Bar chart of the Gallagher index. First Past the Post scores 31 against first choices. Approval voting scores between 26 and 35. Proportional allocation scores 0." ></div>
+</figure>
 
-To do this properly, you need what people actually think of each party, measured separately from how they voted.
+Every approval scenario scores between 26 and 35 on the Gallagher index. First Past the Post scores 31 against first choices, and proportional allocation scores 0. Against the 2024 votes, the 2024 result scores 24. Against first choices it scores 31, because tactical votes hid support for smaller parties.
 
-## The data: the 2024 British Election Study
-
-The [British Election Study](https://www.britishelectionstudy.com/) surveys around 30,000 people per wave. Its post-election wave, fielded in July 2024, asked everyone how much they like each party on a scale from 0 ("strongly dislike") to 10 ("strongly like"). That covers the Conservatives, Labour, the Liberal Democrats, Reform UK, the Greens, the SNP and Plaid Cymru.
-
-We used 26,655 weighted respondents from Great Britain, and built the estimate in four steps:
-
-1. **Approval sets come from likes, not votes.** A respondent approves every party they rate at or above a cut-off. Their sincere favourite is the party they rate highest. Because nobody knows exactly how British voters would use an approval ballot, we ran several cut-offs, from "favourite only" to "anything within two points of your favourite".
-2. **Learn the patterns by region.** For each region and each 2024 vote choice, we estimated what share of those voters approve each party. For example: what share of Labour voters in the North West also approve the Greens?
-3. **Apply them to every constituency.** We applied those rates to each of the 632 GB constituencies' actual 2024 vote mix, counted the approvals for each party standing there, and gave the seat to the most-approved party.
-4. **Score against sincere first choices.** Each scenario's Gallagher index is measured against each party's share of sincere first choices, not against the tactical 2024 vote.
-
-## The results
-
-<img src="/components/images/posts/2026-11-10-approval-voting-proportionality/gallagher.png" alt="Bar chart of the Gallagher index by scenario. 2024 First Past the Post scores 31.1 against sincere first choices. Approval voting scores between 26.0 and 34.6 depending on how many parties voters approve. Proportional allocation scores 0.1." style="max-width: 100%; width: 700px; height: auto; display: block; margin: 20px auto;">
+One winner per seat causes the gap, not the ballot. Approval voting changes who wins each seat, but the winner still takes the whole seat.
 
 <div class="table-scroll" markdown="1">
 
-| Scenario | Lab | Con | Reform | Lib Dem | Green | SNP | Gallagher |
+| Scenario | Labour | Conservative | Reform UK | Liberal Democrat | Green | SNP | Gallagher index |
 |---|---|---|---|---|---|---|---|
-| Sincere first choice (% of voters) | 27.6% | 23.0% | 17.8% | 12.3% | 16.4% | 2.1% | — |
-| 2024 actual seats (First Past the Post) | 409 | 121 | 5 | 72 | 4 | 9 | 31.1 |
-| Approval: favourite only | 356 | 191 | 17 | 47 | 8 | 9 | 26.0 |
-| Approval: rated 8 or more | 362 | 180 | 14 | 52 | 10 | 9 | 26.3 |
-| Approval: rated 7 or more | 383 | 148 | 9 | 66 | 12 | 9 | 28.0 |
-| Approval: rated 6 or more | 417 | 113 | 6 | 74 | 11 | 6 | 31.6 |
-| Approval: within 2 of own top | 443 | 68 | 7 | 84 | 22 | 3 | 34.6 |
-| Proportional allocation | 175 | 145 | 112 | 78 | 104 | 13 | 0.1 |
+| First choice, share of voters | 27.6% | 23.0% | 17.8% | 12.3% | 16.4% | 2.1% | |
+| First Past the Post (2024 result) | 409 | 121 | 5 | 72 | 4 | 9 | 31 |
+| Approval, favorite only | 356 | 191 | 17 | 47 | 8 | 9 | 26 |
+| Approval, rated 8 or more | 362 | 180 | 14 | 52 | 10 | 9 | 26 |
+| Approval, rated 7 or more | 383 | 148 | 9 | 66 | 12 | 9 | 28 |
+| Approval, rated 6 or more | 417 | 113 | 6 | 74 | 11 | 6 | 32 |
+| Approval, within 2 of favorite | 443 | 68 | 7 | 84 | 22 | 3 | 35 |
+| Proportional allocation | 175 | 145 | 112 | 78 | 104 | 13 | 0 |
 
 </div>
 
-_Seats are out of 632 GB constituencies. Northern Ireland isn't in the British Election Study. Against the actual 2024 vote, rather than sincere first choices, the 2024 result scores 24.2._
+Reform UK and the Greens are the first choice of 34% of voters. They win 17 to 29 seats between them under approval voting. Reform UK is the first choice of 17.8% of voters, but 48% of voters rate it 0. The Greens are the first choice of 16.4% of voters, but they top the approval count in only 4 to 22 seats.
 
-## What the numbers say
+## Approval voting does not center Parliament
 
-**Approval voting in single-member seats is about as disproportional as what we have now.** Every approval scenario scores between 26 and 35. The 2024 result scores 31 against the same benchmark, and a proportional count scores about 0. The ballot changes who wins. The single winner per seat is what keeps the seat shares lopsided.
+<figure class="post-chart">
+  <figcaption>Proportional allocation puts the median MP nearer the median voter</figcaption>
+  <div id="chart-median" class="chart-mount"><img src="/components/images/posts/2026-11-10-approval-voting-proportionality/median-mp.png" alt="Dot chart of the median MP on a left-right scale from 0 to 10. The median voter is at 5. The median MP is at 3.2 under First Past the Post and under every approval cut-off. Under proportional allocation the median MP is at 4.1." ></div>
+</figure>
 
-**The more generously people approve, the worse it gets.** With narrow approval, the Conservatives do better than they did in 2024. With broad approval, Labour wins up to 443 seats on 28% of first choices. That's because Labour is acceptable to most Green and Lib Dem voters, so it tops the approval count almost everywhere. This is approval doing exactly what it's designed to do: rewarding the broadly acceptable candidate. In a single-winner race, that's a feature. Across 632 single-winner races, it compounds into a landslide.
+Labour wins a majority in every single-member scenario. The median MP is therefore a Labour MP, at 3.2 on the scale. The median voter sits at 5, so the gap is 1.8 points under First Past the Post and under every approval cut-off.
 
-**Reform UK and the Greens are squeezed out.** Between them they're the sincere first choice of about 34% of voters, but they win only 17 to 29 seats between them.
+Proportional allocation gives no party a majority. The median MP is a Liberal Democrat, at 4.1, and the gap falls to 0.9 points. The median voter sits between the Liberal Democrats at 4.1 and the Conservatives at 7.6. No party stands in the gap.
 
-<img src="/components/images/posts/2026-11-10-approval-voting-proportionality/first-choice-vs-seats.png" alt="Grouped bar chart comparing each party's share of sincere first choices with its share of seats under approval voting at a cut-off of 7. Labour has 28% of first choices and 61% of seats. Reform UK has 18% and 1%. The Greens have 16% and 2%." style="max-width: 100%; width: 700px; height: auto; display: block; margin: 20px auto;">
+Approval voting makes each constituency pick its most acceptable party. In 2024, Labour was the most acceptable party in most constituencies. The local choices add up to one party's majority, and the center of Parliament becomes the center of the party.
 
-The two parties fail for different reasons. Reform UK is polarising: lots of people rank it first, and few others rate it highly. The Greens are well liked, but the Green-friendly voters in almost every seat like Labour too, so Labour gets there first. Either way, being many people's favourite without being most people's acceptable choice gets you almost nothing in a winner-takes-all count.
+<div class="table-scroll" markdown="1">
 
-**Sincere voting alone reshuffles Parliament.** Even the "favourite only" scenario, where nobody votes tactically, moves Labour from 409 seats to 356 and the Conservatives from 121 to 191. Tactical voting did a lot of work in 2024. A better ballot removes it, but that doesn't make the result proportional.
+| Scenario | Median MP | Gap to median voter | Spread of MPs | Mirror distance | Like-score for Parliament |
+|---|---|---|---|---|---|
+| Voters | 5.0 | | 2.2 | | |
+| First Past the Post (2024 result) | 3.2 | 1.8 | 1.8 | 1.3 | 4.0 |
+| Approval, favorite only | 3.2 | 1.8 | 2.1 | 1.1 | 3.9 |
+| Approval, rated 8 or more | 3.2 | 1.8 | 2.1 | 1.2 | 3.9 |
+| Approval, rated 7 or more | 3.2 | 1.8 | 1.9 | 1.2 | 4.0 |
+| Approval, rated 6 or more | 3.2 | 1.8 | 1.7 | 1.4 | 4.1 |
+| Approval, within 2 of favorite | 3.2 | 1.8 | 1.5 | 1.6 | 4.2 |
+| Proportional allocation | 4.1 | 0.9 | 2.4 | 1.1 | 3.7 |
 
-## What this means for reform
+</div>
 
-None of this is a knock on approval voting. It's a reminder to use the right tool for the job.
+The spread is the standard deviation of positions on the scale. Proportional allocation spreads MPs by 2.4, against 2.2 for voters. Generous approval squeezes MPs to 1.5, around Labour. The mirror distance agrees. Proportional allocation scores 1.1, and approval voting scores between 1.1 and 1.6.
 
-For a **single office**, like a mayor, a president or a party leader, approval voting is excellent. It picks the candidate the most people can live with, and it ends vote splitting. St. Louis is the proof.
+## Approval voting wins on dislike
 
-A **Parliament** has a different job. It's meant to represent everyone, so it needs a count that shares seats out in proportion to support. The good news is that you don't have to give up the simple approval ballot to get there:
+The average voter gives Parliament a like-score of 4.2 under generous approval voting, against 3.7 under proportional allocation. Proportional allocation gives Reform UK 112 seats, and 64% of voters rate Reform UK 3 or below. Approval voting keeps out a party that most voters dislike.
 
-- **[Proportional Approval](https://proportional.uk/proportional-approval)** elects a team of MPs from a larger area. You still mark everyone you support, and the count gives each group of voters its fair share of the seats.
-- **[The Additional Member System with approval](https://proportional.uk/ams-plus)** keeps one local MP, elected by approval, and adds top-up MPs so the overall result matches the party vote.
+The difference is a real trade-off. Proportional representation seats the parties that most voters dislike, in proportion to the voters who support them. Approval voting seats the parties that most voters accept, and gives the rest almost nothing.
 
-Both keep the ballot as simple as today's. They just stop the seat count from being winner-takes-all.
+Approval voting barely changes how voters rate their own MP. The like-score for the party of the local MP moves from 4.5 under First Past the Post to between 4.5 and 4.6 under approval voting. Under proportional allocation, the average voter's best-rated party in Parliament scores 7.5.
 
-## Caveats
+## What the model cannot show
 
-- **How British voters would approve is unknown.** That's why we ran a range of cut-offs rather than one number. Real approval behaviour could also be more strategic than any fixed cut-off.
-- **Local effects are simplified.** Constituencies differ only through their 2024 vote mix and their region. Candidates, incumbency and local campaigns aren't modelled.
-- **Independents can't win in the model,** because the survey doesn't ask about individual candidates.
-- **The Greens' sincere share is high.** At 16.4%, it's more than double their 2024 vote. That comes straight from the weighted survey, where many Labour and Lib Dem voters rated the Greens above the party they voted for. But it's the number most worth a second look.
-- **This is Great Britain only.** Northern Ireland isn't in the British Election Study.
+The model works with parties, but approval voting elects people. Two Labour candidates and a Labour-leaning independent can all stand in one constituency without a split vote. A Labour MP who wins a marginal seat by approval needs Conservative and Liberal Democrat approvals. The MP can sit nearer the center than the party.
+
+Party-level survey data cannot measure the effect. To match proportional allocation, Labour MPs elected by approval must sit, on average, at the Liberal Democrat position.
+
+The model has four other limits:
+
+1. Nobody knows how British voters will use an approval ballot, so the model uses a range of cut-offs.
+2. Parties will move under a new system. The model holds the 2024 parties and their positions fixed.
+3. The model has no independents and no Northern Ireland, because the survey covers only parties in Great Britain.
+4. The Greens' first-choice share is 16.4%, more than double their 2024 vote of 6.9%.
+
+## Use each method for its job
+
+Approval voting is the best method I know for a single office, such as a mayor or a party leader. It picks the candidate whom the most voters accept. A Parliament has a different job: to represent the whole electorate, its center and its spread. On the 2024 data, proportional representation does the job better, and it puts the median MP nearer the median voter.
+
+Proportional representation does not need a complicated ballot. [Proportional Approval](https://proportional.uk/proportional-approval) elects a team of MPs from a larger area, and each voter marks every candidate they support. [The Additional Member System with approval](https://proportional.uk/ams-plus) keeps one local MP, elected by approval, and adds top-up MPs to match the party vote.
+
+[Make Votes Matter](https://makevotesmatter.org.uk/) campaigns for proportional representation at Westminster. The [Center for Election Science](https://electionscience.org/) campaigns for approval voting. Both deserve your support.
 
 ## Method and code
 
-The analysis script and its output are here: [approval_estimate.py](/components/data/posts/2026-11-10-approval-voting-proportionality/approval_estimate.py) and [results.json](/components/data/posts/2026-11-10-approval-voting-proportionality/results.json).
+The code and its output:
 
-It needs three inputs:
+1. [approval_estimate.py](/components/data/posts/2026-11-10-approval-voting-proportionality/approval_estimate.py) builds the approval ballots and counts the seats. Its output is [results.json](/components/data/posts/2026-11-10-approval-voting-proportionality/results.json).
+2. [congruence.py](/components/data/posts/2026-11-10-approval-voting-proportionality/congruence.py) measures the median MP, the spread, the mirror distance, and the like-scores. Its output is [congruence.json](/components/data/posts/2026-11-10-approval-voting-proportionality/congruence.json).
+3. [charts.py](/components/data/posts/2026-11-10-approval-voting-proportionality/charts.py) draws the two charts.
 
-1. The British Election Study Internet Panel, 2024 release, waves 1–31 (`BES2024_W31_Panel_v31.05.sav`), which you can download for free from the [British Election Study](https://www.britishelectionstudy.com/).
-2. The 2024 constituency results: [ge2024-constituency-results.json](https://github.com/fsargent/proportional.uk/blob/main/src/lib/data/ge2024-constituency-results.json), compiled from Open Innovations' results files.
-3. The constituency-to-region lookup: [uk-westminster-hexes.json](https://github.com/fsargent/proportional.uk/blob/main/src/lib/data/uk-westminster-hexes.json).
+The code needs three inputs:
 
-If you can improve on the method, I'd love to hear from you.
+1. The British Election Study Internet Panel, 2024 release, waves 1 to 31 (`BES2024_W31_Panel_v31.05.sav`). The file is a free download from the [British Election Study](https://www.britishelectionstudy.com/).
+2. The 2024 constituency results, [ge2024-constituency-results.json](https://github.com/fsargent/proportional.uk/blob/main/src/lib/data/ge2024-constituency-results.json), compiled from the Open Innovations results files.
+3. The region of each constituency, [uk-westminster-hexes.json](https://github.com/fsargent/proportional.uk/blob/main/src/lib/data/uk-westminster-hexes.json).
 
-Changing how we vote is the foundation for every other democratic improvement, but only if we pick a system that does the job we need. If you want a Parliament that looks like the country, support the campaigners working for it: [Make Votes Matter](https://makevotesmatter.org.uk/) in the UK, and the [Center for Election Science](https://electionscience.org/) for better voting methods everywhere.
+If you can improve the method, please write to me.
+
+<script src="/components/scripts/lib/d3.min.js" defer></script>
+<script src="/components/scripts/lib/plot.umd.min.js" defer></script>
+<script src="/components/scripts/posts/approval-voting-proportionality.js" defer></script>

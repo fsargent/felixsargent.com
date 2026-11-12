@@ -1,0 +1,148 @@
+{
+ "party_position": {
+  "conservative": 7.6306513409961685,
+  "labour": 3.172099087353325,
+  "liberal-democrats": 4.057141680056029,
+  "reform-uk": 8.588119448575219,
+  "green": 2.7472063905219226,
+  "scottish-national-party": 3.2535938075930706,
+  "plaid-cymru": 3.242984257357974
+ },
+ "voter_median": 5,
+ "voter_sd": 2.242890961383175,
+ "scenarios": {
+  "2024 actual (First Past the Post)": {
+   "seats": {
+    "labour": 409,
+    "conservative": 121,
+    "reform-uk": 5,
+    "liberal-democrats": 72,
+    "others": 7,
+    "green": 4,
+    "speaker": 1,
+    "scottish-national-party": 9,
+    "plaid-cymru": 4
+   },
+   "median_mp": 3.172099087353325,
+   "sd_mp": 1.778578961702148,
+   "median_gap": 1.8279009126466752,
+   "wasserstein": 1.323968740709327,
+   "chamber_like": 4.04319360574772,
+   "local_like": 4.538865824783376,
+   "local_distance": 2.2274840388314776
+  },
+  "Approval: Bullet: favourite only": {
+   "seats": {
+    "labour": 356,
+    "conservative": 191,
+    "reform-uk": 17,
+    "liberal-democrats": 47,
+    "green": 8,
+    "speaker": 1,
+    "scottish-national-party": 9,
+    "plaid-cymru": 3
+   },
+   "median_mp": 3.172099087353325,
+   "sd_mp": 2.107676620585578,
+   "median_gap": 1.8279009126466752,
+   "wasserstein": 1.1408673027345388,
+   "chamber_like": 3.889001448457337,
+   "local_like": 4.445756765582515,
+   "local_distance": 2.3147475376861397
+  },
+  "Approval: Approve if rated 8+": {
+   "seats": {
+    "labour": 362,
+    "conservative": 180,
+    "reform-uk": 14,
+    "liberal-democrats": 52,
+    "green": 10,
+    "speaker": 1,
+    "scottish-national-party": 9,
+    "plaid-cymru": 4
+   },
+   "median_mp": 3.172099087353325,
+   "sd_mp": 2.0634609126529035,
+   "median_gap": 1.8279009126466752,
+   "wasserstein": 1.1609940856188494,
+   "chamber_like": 3.9106503799375965,
+   "local_like": 4.470599465745451,
+   "local_distance": 2.2931256175965187
+  },
+  "Approval: Approve if rated 7+": {
+   "seats": {
+    "labour": 383,
+    "conservative": 148,
+    "reform-uk": 9,
+    "liberal-democrats": 66,
+    "green": 12,
+    "speaker": 1,
+    "scottish-national-party": 9,
+    "plaid-cymru": 4
+   },
+   "median_mp": 3.172099087353325,
+   "sd_mp": 1.9246992442021964,
+   "median_gap": 1.8279009126466752,
+   "wasserstein": 1.2113902821323204,
+   "chamber_like": 3.9835757011003126,
+   "local_like": 4.5223623463802785,
+   "local_distance": 2.2485837090684315
+  },
+  "Approval: Approve if rated 6+": {
+   "seats": {
+    "labour": 417,
+    "conservative": 113,
+    "reform-uk": 6,
+    "liberal-democrats": 74,
+    "green": 11,
+    "speaker": 1,
+    "scottish-national-party": 6,
+    "plaid-cymru": 4
+   },
+   "median_mp": 3.172099087353325,
+   "sd_mp": 1.74243071580643,
+   "median_gap": 1.8279009126466752,
+   "wasserstein": 1.3583453915281332,
+   "chamber_like": 4.0789145914490925,
+   "local_like": 4.5563451332864675,
+   "local_distance": 2.2184988890593367
+  },
+  "Approval: Within 2 points of own top": {
+   "seats": {
+    "labour": 443,
+    "conservative": 68,
+    "reform-uk": 7,
+    "green": 22,
+    "liberal-democrats": 84,
+    "speaker": 1,
+    "scottish-national-party": 3,
+    "plaid-cymru": 4
+   },
+   "median_mp": 3.172099087353325,
+   "sd_mp": 1.470721925658209,
+   "median_gap": 1.8279009126466752,
+   "wasserstein": 1.5523232045233786,
+   "chamber_like": 4.181964245436416,
+   "local_like": 4.586459835431674,
+   "local_distance": 2.1957197244127733
+  },
+  "Proportional allocation": {
+   "seats": {
+    "green": 104,
+    "labour": 175,
+    "liberal-democrats": 78,
+    "conservative": 145,
+    "reform-uk": 113,
+    "scottish-national-party": 13,
+    "plaid-cymru": 4
+   },
+   "median_mp": 4.057141680056029,
+   "sd_mp": 2.4083257824552793,
+   "median_gap": 0.9428583199439711,
+   "wasserstein": 1.1203437503397216,
+   "chamber_like": 3.6743192622138134,
+   "best_party_like": 7.521067396133344,
+   "nearest_party_distance": 0.8070173647949652
+  }
+ }
+}

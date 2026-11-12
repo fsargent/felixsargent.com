@@ -112,6 +112,26 @@ blockquote p:not(:last-child) {
   margin-bottom: 1em;
 }
 
+.post-chart {
+  margin: 2em 0;
+}
+
+.post-chart figcaption {
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.chart-mount {
+  --plot-background: #fcfcfb;
+}
+
+.chart-mount img,
+.chart-mount svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .table-scroll {
   overflow-x: auto;
   margin: 1.5em 0;
@@ -160,6 +180,10 @@ blockquote p:not(:last-child) {
 }
 
 @media (prefers-color-scheme: dark) {
+  .chart-mount {
+    --plot-background: #1e1e1e;
+  }
+
   .table-scroll th,
   .table-scroll td {
     border-bottom-color: #444;
