@@ -218,18 +218,62 @@ blockquote p:not(:last-child) {
 }
 
 .post-format {
-  display: inline-block;
-  font-size: 0.65em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 0.7em;
   font-weight: 600;
-  color: #fff;
-  background-color: #c0392b;
-  border-radius: 3px;
-  padding: 2px 6px;
-  margin-left: 6px;
-  vertical-align: middle;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  padding: 0 0.6em;
+  margin-left: 0.4em;
+  vertical-align: 0.1em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  line-height: 1.4;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.post-format svg {
+  flex: none;
+}
+
+.pdf-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem 0 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.pdf-embed object {
+  width: 100%;
+  height: 100%;
+}
+
+.pdf-embed img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pdf-download {
+  margin-top: 0;
+  font-size: 0.95rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-format {
+    color: #bbb;
+    border-color: #555;
+  }
+
+  .pdf-embed {
+    border-color: #444;
+  }
 }
 
 #print-button {

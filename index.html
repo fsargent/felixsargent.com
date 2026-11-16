@@ -38,7 +38,7 @@ title: Home
     {% for post in category.last %}
     <li>
       <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-      <a href="{{ post.url }}">{{ post.title }}</a>{% if post.format == "video" %} <span class="post-format">📺</span>{% endif %}
+      <a href="{{ post.url }}">{{ post.title }}</a>{% if post.format == "video" %} <span class="post-format post-format-video"><svg aria-hidden="true" viewBox="0 0 10 10" width="8" height="8"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>Video</span>{% elsif post.format == "slides" %} <span class="post-format post-format-slides"><svg aria-hidden="true" viewBox="0 0 10 10" width="9" height="9"><rect x="1" y="1.5" width="8" height="5.5" rx=".6" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 7v2M3.5 9h3" stroke="currentColor" stroke-width="1.2"/></svg>Slides</span>{% endif %}
     </li>
     {% endfor %}
   </ul>
