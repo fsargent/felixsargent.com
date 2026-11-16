@@ -49,4 +49,4 @@ I closed with Westminster, which has the same bug: a one-mark ballot in a multi-
 
 With a national commission on electoral reform announced in September 2026, this is the best time in a generation to get involved. Join [Make Votes Matter](https://www.makevotesmatter.org.uk/), [Compass](https://www.compassonline.org.uk/), [Fairvote UK](https://www.fairvote.uk/), the [Electoral Reform Society](https://www.electoral-reform.org.uk/), or any of the many others working on this.
 
-Thanks to Markus Brill, Matthias Greger and Nicholas Teh for having me, to everyone who came with sharp questions, and to the IT team at the St. Louis City Board of Election Commissioners for releasing the records.
+Thanks to Markus Brill for having me, to everyone who came with sharp questions, and to the IT team at the St. Louis City Board of Election Commissioners for releasing the records.
