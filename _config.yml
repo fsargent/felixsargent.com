@@ -8,3 +8,13 @@ sass:
   style: compressed
   load_paths:
     - _sass
+
+# Repo files that should never be published (Jekyll's defaults, like vendor/ and Gemfile, still apply).
+exclude:
+  - README.md
+  - article-ideas.md
+  - bin/
+  - mise.toml
+  - wrangler.jsonc
+  - _config.check.yml
+  - .trunk/

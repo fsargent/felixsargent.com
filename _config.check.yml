@@ -1,0 +1,4 @@
+# Overlay used by `mise run check`: fail on Liquid syntax errors and unknown filters.
+liquid:
+  error_mode: strict
+  strict_filters: true
