@@ -1,2 +1,48 @@
+# Local toolchain and tasks for felixsargent.com.
+# First run:  mise install && mise run serve
+# Ruby version: .ruby-version (shared with Cloudflare's build image).
+# Everything else: `mise tasks` lists what's available.
+
+# Ruby comes from .ruby-version, which Cloudflare's build image also reads,
+# so local and production builds use the same Ruby. Bump it there, then run
+# `mise run setup` and `mise run build`.
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
+
 [tools]
-ruby = "latest"
+node = "22" # for `npx wrangler` deploys
+
+[env]
+# Keep gems inside the repo (vendor/ is gitignored) so they don't fight with other projects.
+BUNDLE_PATH = "vendor/bundle"
+# Silence Dart Sass deprecation noise from Jekyll's sass pipeline.
+SASS_SILENCE_DEPRECATIONS = "import,global-builtin"
+
+[tasks.setup]
+description = "Install gems (safe to re-run; fast when already installed)"
+run = "bundle check >/dev/null 2>&1 || bundle install"
+
+[tasks.serve]
+description = "Local preview with live reload at http://localhost:4000 (drafts and future-dated posts included)"
+depends = ["setup"]
+run = "bundle exec jekyll serve --livereload --drafts --future --port ${PORT:-4000}"
+
+[tasks.build]
+description = "Production build into _site/"
+depends = ["setup"]
+env = { JEKYLL_ENV = "production" }
+run = "bundle exec jekyll build"
+
+[tasks.check]
+description = "Build strictly: fail on Liquid errors and front-matter problems"
+depends = ["setup"]
+run = "bundle exec jekyll build --strict_front_matter --config _config.yml,_config.check.yml --destination \"${TMPDIR:-/tmp}/felixsargent-check\""
+
+[tasks.deploy]
+description = "Build and deploy to Cloudflare Workers (needs `npx wrangler login` once)"
+depends = ["build"]
+run = "npx --yes wrangler deploy"
+
+[tasks.clean]
+description = "Remove build output and caches"
+run = "rm -rf _site .jekyll-cache .sass-cache"

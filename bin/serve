@@ -1,10 +1,9 @@
-#!/bin/bash
-
-# Kill any existing Jekyll processes
-pkill -f jekyll 2>/dev/null
-
-# Set environment variables to silence Sass deprecations
-export SASS_SILENCE_DEPRECATIONS="import,global-builtin"
-
-# Start Jekyll server
-bundle exec jekyll serve --livereload --port 4000 2>&1 | grep -v "Deprecation Warning \[import\]" | grep -v "Deprecation Warning \[global-builtin\]"
+#!/usr/bin/env bash
+# Kept for muscle memory: delegates to the mise task so there is one way to run the site.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+if ! command -v mise >/dev/null 2>&1; then
+  echo "mise is not installed. Install it with: curl https://mise.run | sh  (or: brew install mise)" >&2
+  exit 1
+fi
+exec mise run serve "$@"
